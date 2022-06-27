@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <servlet>
+    <description></description>
+    <display-name>Servlet</display-name>
+    <servlet-name>Servlet</servlet-name>
+    <servlet-class>com.test.Servlet</servlet-class>
+    <multipart-config>
+         <location>F:/travail/workspace-jee/TestTemplate/src/main/webapp/assets/upload/images</location> <!-- A adapter chez vous -->
+         <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+         <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+         <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+     </multipart-config>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet</servlet-name>
+    <url-pattern>/Servlet</url-pattern>
+  </servlet-mapping>
+  <display-name>TestTemplate</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/Error.jsp</location>
+	</error-page>
+  <jsp-config>
+     <jsp-property-group>
+     <url-pattern>*.jsp</url-pattern>
+     <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+      </jsp-property-group>
+  </jsp-config>
+</web-app>
